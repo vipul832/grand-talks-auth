@@ -61,12 +61,40 @@ const SignUp = () => {
 
   return (
     <div className="min-h-screen relative flex justify-center items-center my-20">
-      <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] md:w-[28rem] shadow flex justify-center rounded-lg">
+      <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] md:w-[90%] shadow-lg flex justify-between p-10 rounded-lg">
+        <div className="lg:flex hidden ms-10 justify-center w-[50%]">
+          <img
+            src="https://ik.imagekit.io/fqy6m4jmj/weimages/Secure_login-bro.svg?updatedAt=1687173591904"
+            alt="content-creator"
+            width="600px"
+          />
+        </div>
         <Card color="transparent" shadow={false} className="p-3">
-          <Typography variant="h4" color="blue-gray">
+          <Typography variant="h4" color="blue-gray" className="my-2">
             Sign Up
           </Typography>
-          <Typography color="gray" className="mt-1 font-normal">
+          <Button
+            className="my-2 flex justify-center items-center border border-primaryPurple text-primaryPurple hover:bg-primaryPurple hover:text-white"
+            color="white"
+            onClick={handleGoogle}
+          >
+            <FcGoogle className="text-lg mr-2" />
+            Sign up with Google
+          </Button>
+          <Button
+            className="my-2 flex justify-center items-center border border-primaryPurple text-primaryPurple hover:bg-primaryPurple hover:text-white"
+            color="white"
+            onClick={handleGitHub}
+          >
+            <AiFillGithub className="text-lg mr-2" />
+            Sign up with GitHub
+          </Button>
+          <div>
+            <p className="font-bold text-center">OR</p>
+            <hr className="w-full rounded bg-gray-500 my-2" />
+          </div>
+
+          <Typography color="gray" className="mt-1  font-bold">
             Enter your details to register.
           </Typography>
           <form
@@ -199,8 +227,8 @@ const SignUp = () => {
             {/* <Link to={"/signin"}>
             </Link> */}
             <Button
-              className="mt-6"
-              color="deep-purple"
+              className="mt-6 border border-primaryPurple text-primaryPurple font-bold hover:bg-primaryPurple hover:text-white"
+              color="white"
               fullWidth
               type="submit"
             >
@@ -216,28 +244,6 @@ const SignUp = () => {
               </Link>
             </Typography>
           </form>
-
-          <div>
-            <p className="font-bold text-center">OR</p>
-            <hr className="w-full rounded bg-gray-500 my-2" />
-          </div>
-
-          <Button
-            className="mt-2 flex justify-center items-center"
-            color="deep-purple"
-            onClick={handleGoogle}
-          >
-            <FcGoogle className="text-lg mr-2" />
-            Sign up with Google
-          </Button>
-          <Button
-            className="mt-2 flex justify-center items-center"
-            color="deep-purple"
-            onClick={handleGitHub}
-          >
-            <AiFillGithub className="text-lg mr-2" />
-            Sign up with GitHub
-          </Button>
         </Card>
       </div>
     </div>

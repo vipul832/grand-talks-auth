@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "yarn install"
+    "dev": "nodemon index.js"
   },
   "engines": {
     "node": ">=14.20.1"

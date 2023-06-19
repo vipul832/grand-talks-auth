@@ -48,11 +48,31 @@ const SignIn = () => {
 
   return (
     <div className="min-h-screen relative flex justify-center items-center">
-      <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] md:w-[28rem] shadow flex justify-center rounded-lg">
+      <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] md:w-[80%] shadow-lg  flex justify-between rounded-lg items-center p-10">
         <Card color="transparent" shadow={false} className="p-3">
-          <Typography variant="h4" color="blue-gray">
+          <Typography variant="h4" color="blue-gray" className="my-2">
             Sign In
           </Typography>
+          <Button
+            className="my-2 flex justify-center items-center border border-primaryPurple text-primaryPurple hover:bg-primaryPurple hover:text-white"
+            color="white"
+            onClick={handleGoogle}
+          >
+            <FcGoogle className="text-xl mr-2" />
+            Sign in with Google
+          </Button>
+          <Button
+            className="my-2 flex justify-center items-center border border-primaryPurple text-primaryPurple hover:bg-primaryPurple hover:text-white"
+            color="white"
+            onClick={handleGitHub}
+          >
+            <AiFillGithub className="text-xl mr-2" />
+            Sign in with GitHub
+          </Button>
+          <div className="mt-2">
+            <p className="font-bold text-center">OR</p>
+            <hr className="w-full rounded bg-gray-500 my-2" />
+          </div>
 
           <form
             className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96"
@@ -103,7 +123,7 @@ const SignIn = () => {
             </div>
 
             <Button
-              className="mt-6"
+              className="mt-6 border border-primaryPurple text-white font-bold hover:bg-white hover:text-primaryPurple"
               color="deep-purple"
               fullWidth
               type="submit"
@@ -120,28 +140,14 @@ const SignIn = () => {
               </Link>
             </Typography>
           </form>
-          <div>
-            <p className="font-bold text-center">OR</p>
-            <hr className="w-full rounded bg-gray-500 my-2" />
-          </div>
-
-          <Button
-            className="mt-2 flex justify-center items-center"
-            color="deep-purple"
-            onClick={handleGoogle}
-          >
-            <FcGoogle className="text-lg mr-2" />
-            Sign in with Google
-          </Button>
-          <Button
-            className="mt-2 flex justify-center items-center"
-            color="deep-purple"
-            onClick={handleGitHub}
-          >
-            <AiFillGithub className="text-lg mr-2" />
-            Sign in with GitHub
-          </Button>
         </Card>
+        <div className="lg:flex hidden ms-10 justify-center w-[50%]">
+          <img
+            src="https://ik.imagekit.io/fqy6m4jmj/weimages/Authentication-amico.svg?updatedAt=1687172418608"
+            alt="content-creator"
+            width="600px"
+          />
+        </div>
       </div>
     </div>
   );
