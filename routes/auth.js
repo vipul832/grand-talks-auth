@@ -32,15 +32,18 @@ router.post("/login", async (req, res) => {
       email: email,
     });
     if (user.type === "google") {
+      console.log("google");
       return res
-        .status(407)
+        .status(400)
         .json({ message: "Sign In with you Google Account" });
     } else if (user.type === "github") {
+      console.log("github");
       return res
-        .status(407)
+        .status(400)
         .json({ message: "Sign In with you Github Account" });
     } else {
       if (user) {
+        console.log("normal");
         const validate = await bcrypt.compare(password, user.password);
         if (validate) {
           const { password, ...others } = user._doc;
@@ -51,6 +54,7 @@ router.post("/login", async (req, res) => {
           return res.status(400).json({ message: "wrong credentials" });
         }
       } else {
+        console.log("notregistor");
         return res.status(400).json({ message: "User not Register" });
       }
     }
