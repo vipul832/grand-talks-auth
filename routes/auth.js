@@ -31,18 +31,28 @@ router.post("/login", async (req, res) => {
     const user = await User.findOne({
       email: email,
     });
-    if (user) {
-      const validate = await bcrypt.compare(password, user.password);
-      if (validate) {
-        const { password, ...others } = user._doc;
-        return res
-          .status(200)
-          .json({ user: others, message: "Login SuccessFull" });
-      } else {
-        return res.status(400).json({ message: "wrong credentials" });
-      }
+    if (user.type === "google") {
+      return res
+        .status(407)
+        .json({ message: "Sign In with you Google Account" });
+    } else if (user.type === "github") {
+      return res
+        .status(407)
+        .json({ message: "Sign In with you Github Account" });
     } else {
-      return res.status(400).json({ message: "User not Register" });
+      if (user) {
+        const validate = await bcrypt.compare(password, user.password);
+        if (validate) {
+          const { password, ...others } = user._doc;
+          return res
+            .status(200)
+            .json({ user: others, message: "Login SuccessFull" });
+        } else {
+          return res.status(400).json({ message: "wrong credentials" });
+        }
+      } else {
+        return res.status(400).json({ message: "User not Register" });
+      }
     }
   } catch (error) {
     return res.status(500).json({ message: "Internal Error" });
