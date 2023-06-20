@@ -90,7 +90,7 @@ export default function BlogEditorPage() {
             toast.error(error?.data?.message);
           }
         } else {
-          addPostsToServer(
+          await addPostsToServer(
             values,
             status,
             "private",
@@ -175,6 +175,9 @@ export default function BlogEditorPage() {
                 }
               />
             </div>
+            {formik.errors.title && formik.touched.title && (
+              <div className="text-red-500 mt-1">{formik.errors.title}</div>
+            )}
             <div className="text-start  mt-5">
               <label className="block pb-1">
                 Category <sup className="text-red-500">*</sup>
@@ -195,6 +198,11 @@ export default function BlogEditorPage() {
                 <Option value="Product">Product</Option>
                 <Option value="Customer">Customer</Option>
               </Select>
+              {formik.errors.category && formik.touched.category && (
+                <div className="text-red-500 mt-1">
+                  {formik.errors.category}
+                </div>
+              )}
             </div>
             <div className=" mt-6">
               <label htmlFor="desc" className="block pb-1">
@@ -208,6 +216,9 @@ export default function BlogEditorPage() {
                 onBlur={formik.handleBlur}
                 error={formik.errors.desc && formik.touched.desc ? true : false}
               />
+              {formik.errors.desc && formik.touched.desc && (
+                <div className="text-red-500 mt-1">{formik.errors.desc}</div>
+              )}
             </div>
 
             <div className=" pt-5 h-[350px]">
