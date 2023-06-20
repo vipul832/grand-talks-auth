@@ -4,6 +4,7 @@ import { IKContext, IKUpload } from "imagekitio-react";
 import { UploadResponse } from "../../utils/types";
 
 const environment = import.meta.env;
+console.log(environment);
 
 type ImageInputProps = {
   image: string;
