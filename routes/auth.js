@@ -31,6 +31,10 @@ router.post("/login", async (req, res) => {
     const user = await User.findOne({
       email: email,
     });
+    if (!user) {
+      console.log("notregistor");
+      return res.status(400).json({ message: "User not Register" });
+    }
     if (user.type === "google") {
       console.log("google");
       return res
@@ -53,9 +57,6 @@ router.post("/login", async (req, res) => {
         } else {
           return res.status(400).json({ message: "wrong credentials" });
         }
-      } else {
-        console.log("notregistor");
-        return res.status(400).json({ message: "User not Register" });
       }
     }
   } catch (error) {
