@@ -19,7 +19,6 @@ export default function AdminTags() {
     id: userInfo.userId,
     status: activeTab,
   });
-  console.log(data);
   const blogTabs = [
     {
       label: "Publish",

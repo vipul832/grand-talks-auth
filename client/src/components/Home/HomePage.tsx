@@ -16,7 +16,6 @@ const HomePage = () => {
       });
       const data = await responce.json();
       if (data.success === true) {
-        // console.log("data", data.user);
         const user = {
           user: {
             _id: data.user[0]._id,

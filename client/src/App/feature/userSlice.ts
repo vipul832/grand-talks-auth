@@ -19,7 +19,6 @@ const userSlicer = createSlice({
       state.email = actions.payload.user.email;
       state.profileImage = actions.payload.user.profilePic;
       state.type = actions.payload.user.type;
-      console.log("hi", actions.payload);
     },
     removeUser: (state) => {
       state.name = "";

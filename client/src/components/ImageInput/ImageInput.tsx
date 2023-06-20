@@ -51,7 +51,7 @@ export default function ImageInput({
         <IKUpload
           fileName="user"
           onError={() =>
-            console.log("An error occurred while uploading an image.")
+            toast.error("An error occurred while uploading an image.")
           }
           onSuccess={(res: UploadResponse) => {
             setImage(res.url);

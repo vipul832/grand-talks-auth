@@ -59,7 +59,7 @@ export default function BlogEditorPage() {
             //toast
             toast.success(`Post ${status} successful`);
           } catch (error: any) {
-            console.log(error?.data?.message);
+            toast.error(error?.data?.message);
           }
         } else {
           addPostsToServer(
@@ -87,7 +87,7 @@ export default function BlogEditorPage() {
             //toast
             toast.success(`Post ${status} successful`);
           } catch (error: any) {
-            console.log(error?.data?.message);
+            toast.error(error?.data?.message);
           }
         } else {
           addPostsToServer(
@@ -131,7 +131,7 @@ export default function BlogEditorPage() {
         userProfile: userProfile,
       }).unwrap();
     } catch (error: any) {
-      console.log(error?.data?.message);
+      toast.error(error?.data?.message);
     }
   }
 

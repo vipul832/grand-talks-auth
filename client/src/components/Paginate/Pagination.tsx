@@ -19,7 +19,6 @@ export default function Pagination({ totalPage, setPage, page }: paginateProp) {
         marginPagesDisplayed={2}
         onPageChange={(e) => {
           setPage(e.selected);
-          console.log(e);
         }}
         activeClassName={"bg-primaryPurple text-white"}
         pageClassName={

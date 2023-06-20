@@ -51,7 +51,6 @@ router.post("/login", async (req, res) => {
 
 router.get("/login/success", (req, res) => {
   if (req.user) {
-    console.log("add user data in db user Data", req.user);
     res.status(200).json({
       success: true,
       message: "successfull",
@@ -69,7 +68,6 @@ router.get("/login/failed", (req, res) => {
 
 router.get("/logout", (req, res) => {
   req.logout();
-  console.log("logout user");
   res.redirect("/");
 });
 

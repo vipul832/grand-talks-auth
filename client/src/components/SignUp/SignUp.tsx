@@ -40,7 +40,7 @@ const SignUp = () => {
     validationSchema: signUpSchema,
     onSubmit: async (values) => {
       if (!profilePic) {
-        console.log("Upload image");
+        toast.error("Image Required");
         return;
       } else {
         try {
@@ -144,7 +144,7 @@ const SignUp = () => {
               />
               {formik.errors.email && formik.touched.email ? (
                 <span className="text-red-500 text-sm">
-                  {formik.errors.email} console.log(user.user);
+                  {formik.errors.email}
                 </span>
               ) : null}
 

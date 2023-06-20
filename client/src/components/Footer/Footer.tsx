@@ -1,15 +1,15 @@
 import { Typography } from "@material-tailwind/react";
 
-const LINKS = [
-  {
-    title: "Company",
-    items: ["About us"],
-  },
-  {
-    title: "Resource",
-    items: ["Blog"],
-  },
-];
+// const LINKS = [
+//   {
+//     title: "",
+//     items: [""],
+//   },
+//   {
+//     title: "",
+//     items: [""],
+//   },
+// ];
 
 const currentYear = new Date().getFullYear();
 
@@ -35,7 +35,7 @@ export default function Footer() {
               GrandTalk's
             </Typography>
           </div>
-          <div className="grid grid-cols-3 justify-between gap-4">
+          {/* <div className="grid grid-cols-3 justify-between gap-4">
             {LINKS.map(({ title, items }) => (
               <ul key={title}>
                 <Typography
@@ -59,7 +59,7 @@ export default function Footer() {
                 ))}
               </ul>
             ))}
-          </div>
+          </div> */}
         </div>
         <div className="mt-12 flex w-full flex-col items-center justify-center border-t border-blue-gray-50 py-4 md:flex-row md:justify-between">
           <Typography

@@ -22,7 +22,6 @@ passport.use(
     async function (accessToken, refreshToken, profiler, done) {
       User.find({ email: profiler.emails[0].value }).then((user) => {
         if (user.length !== 0) {
-          console.log("user is register in app");
           done(null, user);
         } else {
           new User({
@@ -52,7 +51,6 @@ passport.use(
     async function (accessToken, refreshToken, profiler, done) {
       User.find({ email: profiler.emails[0].value }).then((user) => {
         if (user.length !== 0) {
-          console.log("user is register in app");
           done(null, user);
         } else {
           new User({
