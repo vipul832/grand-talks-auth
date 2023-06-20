@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { setUser } from "../../App/feature/userSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { getUserInfo, setUser } from "../../App/feature/userSlice";
 import { setSignInUser } from "../../App/feature/authSlice";
 import HomeTabs from "../Tabs/HomeTabs/HomeTabs";
 import IntroTitle from "../Intro/IntroTitle";
@@ -8,7 +8,9 @@ import { toast } from "react-hot-toast";
 
 const HomePage = () => {
   const dispatch = useDispatch();
+  const userInfo = useSelector(getUserInfo);
   useEffect(() => {
+    if (userInfo.userId) return;
     async function getLoginData() {
       const responce = await fetch("/api/auth/login/success", {
         method: "GET",
