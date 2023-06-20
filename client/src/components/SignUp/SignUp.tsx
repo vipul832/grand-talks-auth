@@ -227,8 +227,8 @@ const SignUp = () => {
             {/* <Link to={"/signin"}>
             </Link> */}
             <Button
-              className="mt-6 border border-primaryPurple text-primaryPurple font-bold hover:bg-primaryPurple hover:text-white"
-              color="white"
+              className="mt-6 border hover:border-primaryPurple text-white font-bold hover:bg-white hover:text-primaryPurple"
+              color="deep-purple"
               fullWidth
               type="submit"
             >

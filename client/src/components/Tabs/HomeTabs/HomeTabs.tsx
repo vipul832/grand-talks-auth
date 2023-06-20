@@ -23,7 +23,6 @@ export default function HomeTabs() {
     limit: 10,
     search: search,
   });
-  console.log("home page", page);
   const totalPage = data?.totalPages;
   const data1 = [
     {

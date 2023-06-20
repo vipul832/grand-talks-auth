@@ -4,6 +4,7 @@ import { setUser } from "../../App/feature/userSlice";
 import { setSignInUser } from "../../App/feature/authSlice";
 import HomeTabs from "../Tabs/HomeTabs/HomeTabs";
 import IntroTitle from "../Intro/IntroTitle";
+import { toast } from "react-hot-toast";
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -27,6 +28,7 @@ const HomePage = () => {
         };
         dispatch(setSignInUser());
         dispatch(setUser(user));
+        toast.success("Login Successful");
       }
     }
     getLoginData();

@@ -123,7 +123,7 @@ const SignIn = () => {
             </div>
 
             <Button
-              className="mt-6 border border-primaryPurple text-white font-bold hover:bg-white hover:text-primaryPurple"
+              className="mt-6 border hover:border-primaryPurple text-white font-bold hover:bg-white hover:text-primaryPurple"
               color="deep-purple"
               fullWidth
               type="submit"
