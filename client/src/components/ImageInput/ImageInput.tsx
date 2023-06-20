@@ -50,9 +50,10 @@ export default function ImageInput({
         </label>
         <IKUpload
           fileName="user"
-          onError={() =>
-            toast.error("An error occurred while uploading an image.")
-          }
+          onError={(e) => {
+            console.log(e);
+            toast.error("An error occurred while uploading an image.");
+          }}
           onSuccess={(res: UploadResponse) => {
             setImage(res.url);
             toast.success("Thumbnail Upload Successful");
@@ -68,11 +69,12 @@ export default function ImageInput({
               /[^\s]+(.*?).(jpg|png)$/i.test(file.name)
             ) {
               return true;
+            } else {
+              toast.error("Invalid Thumbnail. Only accept jpg or png");
             }
             // console.log(
             //   "Image should be less than 2 mb with jpg and png extension"
             // );
-            toast.error("Invalid Thumbnail");
             return false;
           }}
         />
